@@ -13,15 +13,6 @@ from PyPDF2 import PdfReader
 # ============================
 # 기본 설정
 # ============================
-st.set_page_config(
-    page_title="(주)건화 등기부등본 Excel 통합기",
-    layout="wide"
-)
-
-password = st.text_input('비밀번호를 입력하세요', type='password')
-if password != '126791':
-    st.warning('올바른 비밀번호를 입력하세요.')
-    st.stop()
 
 st.title("🧾 (주)건화 등기부등본 통합분석기")
 
