@@ -4,9 +4,6 @@ import streamlit as st
 APP_TITLE = "(주)건화 업무자동화 포털"
 PASSWORD = "126791"
 
-# ============================
-# Page Config (사이드바 강제 표시)
-# ============================
 st.set_page_config(
     page_title=APP_TITLE,
     page_icon="🏢",
@@ -14,9 +11,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# ============================
-# 공통 UI 테마
-# ============================
 st.markdown("""
 <style>
 html, body, [class*="css"] { font-size: 16px; }
@@ -28,7 +22,7 @@ hr { margin: 0.8rem 0; }
 """, unsafe_allow_html=True)
 
 # ============================
-# 비밀번호 (공통 게이트)
+# 비밀번호 게이트
 # ============================
 pw = st.text_input("비밀번호를 입력하세요", type="password")
 if pw != PASSWORD:
@@ -36,31 +30,38 @@ if pw != PASSWORD:
     st.stop()
 
 # ============================
-# 사이드바 (강제로 존재감 부여)
+# 서비스 UI 함수 (여기에 각 코드 본문을 넣을 자리)
+# ============================
+def service_registry_merge():
+    st.subheader("🧾 등기부등본 통합분석기")
+    st.caption("Excel.zip + PDF.zip 업로드 → 통합 결과 ZIP 다운로드")
+    st.info("여기에 '등기부등본 통합분석기' 본문 코드를 그대로 넣으면 됩니다.")
+
+def service_management_card():
+    st.subheader("📄 관리카드 자동작성")
+    st.caption("매뉴얼/매크로/양식 다운로드")
+    st.info("여기에 '관리카드 자동작성' 본문 코드를 그대로 넣으면 됩니다.")
+
+# ============================
+# 사이드바: 선택 가능한 메뉴(라디오)
 # ============================
 with st.sidebar:
     st.header("📂 서비스 메뉴")
-    st.markdown("""
-- **등기부등본 통합분석기**
-- **관리카드 자동작성**
-""")
+    service = st.radio(
+        "서비스 선택",
+        ["등기부등본 통합분석기", "관리카드 자동작성"],
+        index=0,
+        label_visibility="collapsed"
+    )
     st.divider()
-    st.caption("좌측 메뉴는 항상 열려 있습니다.\n\n페이지를 선택해 작업을 시작하세요.")
+    st.caption("서비스를 선택하면 본문이 전환됩니다.")
 
 # ============================
-# 메인 화면 (랜딩)
+# 메인: 선택값에 따라 라우팅
 # ============================
 st.title("🏢 (주)건화 업무자동화 포털")
 
-st.markdown("""
-### 서비스 선택
-왼쪽 **사이드바 메뉴**에서 서비스를 선택하세요.
-
-- **등기부등본 통합분석기**  
-  Excel.zip + PDF.zip 업로드 → 통합 결과 ZIP 다운로드
-
-- **관리카드 자동작성**  
-  매뉴얼 / PPT 매크로 / 결합용 엑셀 양식 다운로드
-""")
-
-st.info("사이드바가 접혀 있으면 좌상단 ☰ 버튼을 눌러 펼치세요.")
+if service == "등기부등본 통합분석기":
+    service_registry_merge()
+else:
+    service_management_card()
