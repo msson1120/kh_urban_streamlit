@@ -55,9 +55,9 @@ st.title(f"🏢 {PORTAL_TITLE}")
 
 cols = st.columns([1, 1, 1, 2])
 with cols[0]:
-    badge("INTERNAL")
+    badge("AUTOMATION")
 with cols[1]:
-    badge("STREAMLIT")
+    badge("ENGINEERING")
 with cols[2]:
     badge("v1.0")
 with cols[3]:
@@ -66,20 +66,13 @@ with cols[3]:
 
 st.markdown("""
 ### SERVICE
-좌측 **서비스 메뉴**에서 프로그램을 선택하거나, 아래 **바로가기** 버튼을 누르세요.
+필요한 서비스 메뉴의 **실행하기** 버튼을 누르세요.
 """)
 
 # ============================
 # 바로가기 (CTA)
 # ============================
-cta1, cta2, cta3 = st.columns([1, 1, 1])
-
-with cta1:
-    st.page_link("pages/1_registry.py", label="🧾 등기부등본 통합분석기 바로가기", use_container_width=True)
-with cta2:
-    st.page_link("pages/2_card.py", label="📄 관리카드 자동작성 바로가기", use_container_width=True)
-with cta3:
-    st.info("※ 파일 업로드 전, 양식/매뉴얼 먼저 확인")
+st.info("※ 파일 업로드 전, 양식/매뉴얼 먼저 확인")
 
 st.divider()
 
