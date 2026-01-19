@@ -1,6 +1,9 @@
 # app.py
 import streamlit as st
 
+from services.registry_app import run as run_registry   # 등기부등본용(너가 다음에 넣을 파일)
+from services.card_app import run as run_card           # 관리카드용(아래 제공)
+
 APP_TITLE = "(주)건화 업무자동화 포털"
 PASSWORD = "126791"
 
@@ -11,6 +14,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# 공통 테마(여기서만)
 st.markdown("""
 <style>
 html, body, [class*="css"] { font-size: 16px; }
@@ -21,30 +25,19 @@ hr { margin: 0.8rem 0; }
 </style>
 """, unsafe_allow_html=True)
 
-# ============================
-# 비밀번호 게이트
-# ============================
-pw = st.text_input("비밀번호를 입력하세요", type="password")
-if pw != PASSWORD:
-    st.warning("올바른 비밀번호를 입력하세요.")
-    st.stop()
+# 비번: 세션 저장(페이지 전환해도 유지)
+if "auth" not in st.session_state:
+    st.session_state.auth = False
 
-# ============================
-# 서비스 UI 함수 (여기에 각 코드 본문을 넣을 자리)
-# ============================
-def service_registry_merge():
-    st.subheader("🧾 등기부등본 통합분석기")
-    st.caption("Excel.zip + PDF.zip 업로드 → 통합 결과 ZIP 다운로드")
-    st.info("여기에 '등기부등본 통합분석기' 본문 코드를 그대로 넣으면 됩니다.")
+if not st.session_state.auth:
+    pw = st.text_input("비밀번호를 입력하세요", type="password")
+    if pw == PASSWORD:
+        st.session_state.auth = True
+        st.rerun()
+    else:
+        st.warning("올바른 비밀번호를 입력하세요.")
+        st.stop()
 
-def service_management_card():
-    st.subheader("📄 관리카드 자동작성")
-    st.caption("매뉴얼/매크로/양식 다운로드")
-    st.info("여기에 '관리카드 자동작성' 본문 코드를 그대로 넣으면 됩니다.")
-
-# ============================
-# 사이드바: 선택 가능한 메뉴(라디오)
-# ============================
 with st.sidebar:
     st.header("📂 서비스 메뉴")
     service = st.radio(
@@ -56,12 +49,9 @@ with st.sidebar:
     st.divider()
     st.caption("서비스를 선택하면 본문이 전환됩니다.")
 
-# ============================
-# 메인: 선택값에 따라 라우팅
-# ============================
 st.title("🏢 (주)건화 업무자동화 포털")
 
 if service == "등기부등본 통합분석기":
-    service_registry_merge()
+    run_registry()
 else:
-    service_management_card()
+    run_card()
