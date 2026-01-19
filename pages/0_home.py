@@ -44,7 +44,7 @@ with cols[3]:
     st.caption(f"업데이트: {now} (로컬 기준)")
 
 st.markdown("""
-### 오늘 할 일
+### SERVICE
 좌측 **서비스 메뉴**에서 프로그램을 선택하거나, 아래 **바로가기** 버튼을 누르세요.
 """)
 
@@ -78,7 +78,7 @@ with left:
             "PDF는 주소 기반 파일명 일괄 변경 포함"
         ],
         page_path="pages/1_registry.py",
-        button_label="🧾 실행하기"
+        button_label="▷ 실행하기"
     )
 
 with right:
@@ -92,7 +92,7 @@ with right:
             "결과물은 최종 검토/수정 필요"
         ],
         page_path="pages/2_card.py",
-        button_label="📄 실행하기"
+        button_label="▷ 실행하기"
     )
 
 st.divider()
@@ -103,10 +103,7 @@ st.divider()
 with st.expander("✅ 운영 체크리스트", expanded=False):
     st.markdown("""
 - **업로드 파일명/확장자** 확인 (zip 내부에 xlsx / pdf가 들어있는지)
-- 분석 결과는 **원본대조 검토** (등기부 특성상 누락 가능)
-- 오류 발생 시: Streamlit Cloud → **Manage app → Logs** 확인 후 공유
-- 배포 파일 교체 시: `assets/` 폴더 파일만 교체
-""")
+- 분석 결과는 **사후 검토** 필수""")
 
 # ============================
 # 공지/문의
@@ -114,5 +111,5 @@ with st.expander("✅ 운영 체크리스트", expanded=False):
 with st.expander("📌 공지 / 문의", expanded=False):
     st.markdown("""
 - 본 포털은 **사내 업무 목적**으로만 사용합니다. 외부 배포 금지.
-- 개선 요청/버그 제보는 **오류 화면 캡처 + Logs**와 함께 남겨주세요.
+- 개선 요청/버그 제보는 **오류 화면을 캡처**해 **손명선 사원**에게 남겨주세요.
 """)
