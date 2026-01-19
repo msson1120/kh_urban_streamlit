@@ -119,7 +119,7 @@ with st.expander("✅ 운영 체크리스트", expanded=False):
 
 with st.expander("📌 공지 / 문의", expanded=False):
     st.markdown("""
-- 본 포털은 **사내 업무 목적**으로만 사용합니다. 외부 배포 금지.
+- 본 포털은 **사내 업무 목적**으로만 사용. 외부 배포 금지.
 - 개선 요청/버그 제보는 **오류 화면 캡처 후 **손명선 사원**에게 공유**
 - 문의 : msson2802@kunhwaeng.co.kr / 010-7178-6098
 """)
