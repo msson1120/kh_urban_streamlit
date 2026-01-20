@@ -123,6 +123,9 @@ h2{ font-size: 1.3rem !important; font-weight: 900 !important; letter-spacing: -
   height: fit-content;
 }
 
+/* 실행하기 버튼 영역 간격 (추가) */
+.actions{ margin-top: 14px; }
+
 /* Streamlit link button polish */
 div[data-testid="stPageLink"] a{
   display:inline-flex !important;
@@ -219,11 +222,15 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # 버튼(페이지 이동) - 기능상 동일: 각 페이지로 가는 실행 트리거
+st.markdown('<div class="actions">', unsafe_allow_html=True)
+
 c1, c2 = st.columns(2)
 with c1:
     st.page_link("pages/1_registry.py", label="▷ 실행하기", use_container_width=False)
 with c2:
     st.page_link("pages/2_card.py", label="▷ 실행하기", use_container_width=False)
+
+st.markdown('</div>', unsafe_allow_html=True)
 
 st.markdown("<hr/>", unsafe_allow_html=True)
 
