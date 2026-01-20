@@ -224,3 +224,25 @@ with c1:
     st.page_link("pages/1_registry.py", label="▷ 실행하기", use_container_width=False)
 with c2:
     st.page_link("pages/2_card.py", label="▷ 실행하기", use_container_width=False)
+
+st.markdown("<hr/>", unsafe_allow_html=True)
+
+with st.expander("📌 문의 · 운영 안내", expanded=False):
+    st.markdown("""
+    <div style="
+        border:1px solid rgba(0,0,0,.08);
+        border-radius:16px;
+        padding:16px;
+        background: rgba(0,0,0,.02);
+        line-height:1.65;
+    ">
+        <b>문의</b><br/>
+        · 오류 발생 시: 담당자에게 화면 캡처 전달<br/>
+        · 파일 업로드 오류: 파일명/확장자/압축 구조 확인<br/><br/>
+
+        <b>운영 리스트</b><br/>
+        · 본 포털은 내부 업무 자동화 용도로만 사용<br/>
+        · 결과물은 반드시 최종 검토 후 사용<br/>
+        · 매뉴얼/양식 미준수 시 오류 발생 가능
+    </div>
+    """, unsafe_allow_html=True)
