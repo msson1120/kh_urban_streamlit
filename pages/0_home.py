@@ -151,7 +151,7 @@ st.markdown(f"""
     <div class="hero-left">
       <div class="hero-icon">🏢</div>
       <div>
-        <h1>(주)건화 업무자동화 포털</h1>
+        <h1>(주)건화 AI Assistant HUB</h1>
         <div class="small">필요한 서비스를 선택하고, 표준 산출물로 빠르게 마무리합니다.</div>
         <div class="badges">
           <span class="badge"><span class="dot"></span>AUTOMATION</span>
@@ -237,11 +237,12 @@ with st.expander("📌 문의 · 운영 안내", expanded=False):
         line-height:1.65;
     ">
         <b>문의</b><br/>
-        · 오류 발생 시: 담당자에게 화면 캡처 전달<br/>
-        · 파일 업로드 오류: 파일명/확장자/압축 구조 확인<br/><br/>
+        · 개선 요청/버그 제보는 오류 화면 캡쳐 후 **손명선 사원**에게 화면 캡처 전달<br/>
+        · 문의 : msson2802@kunhwaeng.co.kr / 010-7178-6098<br/><br/>
 
-        <b>운영 리스트</b><br/>
-        · 본 포털은 내부 업무 자동화 용도로만 사용<br/>
+        <b>공지</b><br/>
+        · 본 포털은 **사내 업무 목적으로만** 사용<br/>
+        · 업로드 파일명/확장자 확인<br/>
         · 결과물은 반드시 최종 검토 후 사용<br/>
         · 매뉴얼/양식 미준수 시 오류 발생 가능
     </div>
