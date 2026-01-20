@@ -244,13 +244,26 @@ with st.expander("📌 문의", expanded=False):
         line-height:1.65;
     ">
         <b>문의</b><br/>
-        · 개선 요청/버그 제보는 오류 화면 캡쳐 후 **손명선 사원**에게 화면 캡처 전달<br/>
-        · 문의 : msson2802@kunhwaeng.co.kr / 010-7178-6098<br/><br/>
-
-        <b>공지</b><br/>
-        · 본 포털은 **사내 업무 목적으로만** 사용<br/>
-        · 업로드 파일명/확장자 확인<br/>
-        · 결과물은 반드시 최종 검토 후 사용<br/>
-        · 매뉴얼/양식 미준수 시 오류 발생 가능
+        · 개선 요청 / 버그 제보는 오류 화면 캡쳐 후 <b>손명선 사원</b>에게 화면 캡처 전달<br/>
+        · 문의 : msson2802@kunhwaeng.co.kr / 010-7178-6098
     </div>
     """, unsafe_allow_html=True)
+
+
+with st.expander("📢 공지", expanded=False):
+    st.markdown("""
+    <div style="
+        border:1px solid rgba(0,0,0,.08);
+        border-radius:16px;
+        padding:16px;
+        background: rgba(0,0,0,.02);
+        line-height:1.65;
+    ">
+        <b>공지</b><br/>
+        · 본 포털은 <b>사내 업무 목적으로만</b> 사용<br/>
+        · 업로드 파일명 / 확장자 사전 확인<br/>
+        · 결과물은 반드시 최종 검토 후 사용<br/>
+        · 매뉴얼 / 양식 미준수 시 오류 발생 가능
+    </div>
+    """, unsafe_allow_html=True)
+
