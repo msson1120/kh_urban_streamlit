@@ -3,7 +3,7 @@ from datetime import datetime
 
 # ===== HOME 기본 설정 =====
 st.set_page_config(
-    page_title="(주)건화 업무자동화 포털 - HOME",
+    page_title="(주)건화 AI Assistant 허브 - HOME",
     page_icon="🏢",
     layout="wide"
 )
