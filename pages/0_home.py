@@ -189,7 +189,7 @@ st.markdown("""
   <div class="card">
     <div class="card-top">
       <div>
-        <div class="card-title">🧾 등기부등본 통합분석기</div>
+        <div class="card-title">🧾 등기부등본 통합분석</div>
         <div class="card-desc">Excel.zip + PDF.zip 업로드 → 통합 결과 ZIP 다운로드</div>
       </div>
       <div class="kicker">BATCH · PDF→EXCEL</div>
@@ -227,7 +227,7 @@ with c2:
 
 st.markdown("<hr/>", unsafe_allow_html=True)
 
-with st.expander("📌 문의 · 운영 안내", expanded=False):
+with st.expander("📌 문의", expanded=False):
     st.markdown("""
     <div style="
         border:1px solid rgba(0,0,0,.08);
