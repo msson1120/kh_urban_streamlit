@@ -164,7 +164,9 @@ div[data-testid="stPageLink"] a:hover{
 """, unsafe_allow_html=True)
 
 # ===== 데이터(표시용) =====
-updated = datetime.now().strftime("%Y-%m-%d %H:%M")
+from zoneinfo import ZoneInfo
+updated = datetime.now(ZoneInfo("Asia/Seoul")).strftime("%Y-%m-%d %H:%M")
+
 
 # ===== HERO =====
 # logo_data_uri가 비어있으면(파일없음) 깨진 이미지 대신 fallback 이모지 표시
