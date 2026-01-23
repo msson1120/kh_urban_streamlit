@@ -1,6 +1,6 @@
 import streamlit as st
 
-APP_TITLE = "(주)건화 AI Assistant HUB"
+APP_TITLE = "KH-Urban AI Assistant HUB"
 PASSWORD = "126791"
 
 # ============================
