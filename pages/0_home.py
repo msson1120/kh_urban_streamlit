@@ -208,7 +208,7 @@ st.markdown("""
 <div class="notice">
   <div class="notice-title">※ 파일 업로드 전, 양식/매뉴얼 먼저 확인</div>
   <div class="notice-body">
-    좌측 <b>서비스 메뉴</b>에서 프로그램을 선택하세요.<br/>
+    하단 <b>서비스 메뉴</b>에서 프로그램을 선택하세요.<br/>
     실제 작업은 <b>각 서비스 페이지</b>에서 진행합니다.
   </div>
 </div>
