@@ -182,8 +182,8 @@ st.markdown(f"""
         {hero_icon_html}
       </div>
       <div>
-        <h1>(주)건화 AI Assistant HUB</h1>
-        <div class="small">필요한 서비스를 선택하고, 표준 산출물로 빠르게 마무리합니다.</div>
+        <h1>KH-Urban AI Assistant HUB</h1>
+        <div class="small">(주)건화.</div>
         <div class="badges">
           <span class="badge"><span class="dot"></span>AUTOMATION</span>
           <span class="badge"><span class="dot"></span>ENGINEERING</span>
