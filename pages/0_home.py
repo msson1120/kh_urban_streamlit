@@ -17,7 +17,7 @@ logo_data_uri = f"data:image/png;base64,{logo_base64}" if logo_base64 else ""
 
 # ===== HOME 기본 설정 =====
 st.set_page_config(
-    page_title="(주)건화 AI Assistant 허브 - HOME",
+    page_title="KH-Urban AI Assistant - HOME",
     page_icon=LOGO_PATH,  # 탭 아이콘은 PNG 경로 그대로 OK
     layout="wide"
 )
