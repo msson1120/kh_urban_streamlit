@@ -8,7 +8,7 @@ PASSWORD = "126791"
 # ============================
 st.set_page_config(
     page_title=APP_TITLE,
-    page_icon="🏢",
+    page_icon="assets/kunhwa_icon_512.png",
     layout="wide",
     initial_sidebar_state="expanded"
 )
