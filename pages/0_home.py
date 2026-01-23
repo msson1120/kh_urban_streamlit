@@ -152,7 +152,9 @@ st.markdown(f"""
 <div class="hero">
   <div class="hero-row">
     <div class="hero-left">
-      <div class="hero-icon">🏢</div>
+      <div class="hero-icon">
+        <img src="assets/kunhwa_icon_512.png" class="hero-logo">
+      </div>
       <div>
         <h1>(주)건화 AI Assistant HUB</h1>
         <div class="small">필요한 서비스를 선택하고, 표준 산출물로 빠르게 마무리합니다.</div>
