@@ -4,7 +4,7 @@ from datetime import datetime
 # ===== HOME 기본 설정 =====
 st.set_page_config(
     page_title="(주)건화 AI Assistant 허브 - HOME",
-    page_icon="🏢",
+    page_icon="assets/kunhwa_icon_512.png",
     layout="wide"
 )
 
