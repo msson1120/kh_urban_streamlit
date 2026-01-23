@@ -185,7 +185,7 @@ st.markdown(f"""
       </div>
       <div>
         <h1>KH-Urban AI Assistant HUB</h1>
-        <div class="small">made by 손명선</div>
+        <div class="small">made by 손명선사원</div>
         <div class="badges">
           <span class="badge"><span class="dot"></span>AUTOMATION</span>
           <span class="badge"><span class="dot"></span>ENGINEERING</span>
