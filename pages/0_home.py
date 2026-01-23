@@ -1,10 +1,24 @@
 import streamlit as st
 from datetime import datetime
+import base64
+import os
+
+# ===== 유틸: 이미지 -> base64 (Streamlit HTML에서 깨짐 방지) =====
+def img_to_base64(path: str) -> str:
+    if not os.path.exists(path):
+        return ""
+    with open(path, "rb") as f:
+        return base64.b64encode(f.read()).decode("utf-8")
+
+# 로고 base64 준비 (HERO에서 사용)
+LOGO_PATH = "assets/kunhwa_icon_512.png"
+logo_base64 = img_to_base64(LOGO_PATH)
+logo_data_uri = f"data:image/png;base64,{logo_base64}" if logo_base64 else ""
 
 # ===== HOME 기본 설정 =====
 st.set_page_config(
     page_title="(주)건화 AI Assistant 허브 - HOME",
-    page_icon="assets/kunhwa_icon_512.png",
+    page_icon=LOGO_PATH,  # 탭 아이콘은 PNG 경로 그대로 OK
     layout="wide"
 )
 
@@ -65,7 +79,12 @@ h2{ font-size: 1.3rem !important; font-weight: 900 !important; letter-spacing: -
   background: var(--card);
   border: 1px solid var(--bd);
   display:flex; align-items:center; justify-content:center;
-  font-size: 1.35rem;
+}
+.hero-logo{
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  display:block;
 }
 .badges{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 10px; }
 .badge{
@@ -123,7 +142,7 @@ h2{ font-size: 1.3rem !important; font-weight: 900 !important; letter-spacing: -
   height: fit-content;
 }
 
-/* 실행하기 버튼 영역 간격 (추가) */
+/* 실행하기 버튼 영역 간격 */
 .actions{ margin-top: 14px; }
 
 /* Streamlit link button polish */
@@ -148,12 +167,19 @@ div[data-testid="stPageLink"] a:hover{
 updated = datetime.now().strftime("%Y-%m-%d %H:%M")
 
 # ===== HERO =====
+# logo_data_uri가 비어있으면(파일없음) 깨진 이미지 대신 fallback 이모지 표시
+hero_icon_html = (
+    f'<img src="{logo_data_uri}" class="hero-logo" />'
+    if logo_data_uri
+    else '<span style="font-size:1.35rem;">🏢</span>'
+)
+
 st.markdown(f"""
 <div class="hero">
   <div class="hero-row">
     <div class="hero-left">
       <div class="hero-icon">
-        <img src="assets/kunhwa_icon_512.png" class="hero-logo">
+        {hero_icon_html}
       </div>
       <div>
         <h1>(주)건화 AI Assistant HUB</h1>
@@ -223,7 +249,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# 버튼(페이지 이동) - 기능상 동일: 각 페이지로 가는 실행 트리거
+# 버튼(페이지 이동) - 기능상 동일
 st.markdown('<div class="actions">', unsafe_allow_html=True)
 
 c1, c2 = st.columns(2)
@@ -251,7 +277,6 @@ with st.expander("📌 문의", expanded=False):
     </div>
     """, unsafe_allow_html=True)
 
-
 with st.expander("📢 공지", expanded=False):
     st.markdown("""
     <div style="
@@ -268,4 +293,3 @@ with st.expander("📢 공지", expanded=False):
         · 매뉴얼 / 양식 미준수 시 오류 발생 가능
     </div>
     """, unsafe_allow_html=True)
-
