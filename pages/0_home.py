@@ -268,6 +268,7 @@ with st.expander("📌 문의", expanded=False):
         border:1px solid rgba(0,0,0,.08);
         border-radius:16px;
         padding:16px;
+        margin-bottom:12px; 
         background: rgba(0,0,0,.02);
         line-height:1.65;
     ">
@@ -283,6 +284,7 @@ with st.expander("📢 공지", expanded=False):
         border:1px solid rgba(0,0,0,.08);
         border-radius:16px;
         padding:16px;
+        margin-bottom:12px; 
         background: rgba(0,0,0,.02);
         line-height:1.65;
     ">
